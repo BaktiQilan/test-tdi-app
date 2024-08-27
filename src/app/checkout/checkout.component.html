@@ -1,0 +1,57 @@
+<div class="container my-4" *ngIf="items.length != 0">
+  <div class="card">
+    <div class="card-header text-center">
+      <h2>Checkout Summary</h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items; let i = index">
+            <td>
+              <img
+                [src]="item.thumbnail"
+                [alt]="item.title"
+                style="width: 50px; height: 50px; object-fit: cover"
+              />
+            </td>
+            <td>{{ item.title }}</td>
+            <td>${{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.total }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="removeItem(item)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer text-end">
+      <h4>Total: ${{ total }}</h4>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end me-3 my-2">
+    <button class="btn btn-success" routerLink="/transaction">Buy</button>
+  </div>
+</div>
+
+<div class="container mt-2" *ngIf="items.length == 0">
+  <div class="d-flex align-item-center justify-content-center">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">No items checked out</h5>
+        <a href="#" class="btn btn-primary" routerLink="">Go to Catalog</a>
+      </div>
+    </div>
+  </div>
+</div>

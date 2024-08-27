@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+.root {
+    --bs-primary: #00AA5B !important; 
+}
+
+.btn-primary {
+    background-color: #00AA5B  !important; /* Hijau Muda */
+    border-color: #00AA5B  !important;
+}
+
+.bg-primary {
+    background-color: #00AA5B  !important;
+}
+
+.text-primary {
+    color: #00AA5B  !important;
+}
+
+.table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.input-group .form-control {
+padding-left: 2.5rem; /* Adjust padding to make space for the icon */
+}
+
+.input-group .position-absolute {
+color: #495057; /* Default color, change as needed */
+pointer-events: none; /* Ensures click events go to the input */
+}
+
+.input-group .form-control:focus + .position-absolute,
+.input-group .form-control:active + .position-absolute {
+/* Ensures the icon stays visible */
+color: #495057; /* Keep the icon color the same or change as needed */
+}
+
+
+.card {
+    position: relative; /* Positioning context for watermark */
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem; /* Adjust size as needed */
+    color: rgba(0, 0, 0, 0.1); /* Light gray color with transparency */
+    pointer-events: none; /* Make sure watermark does not interfere with clicks */
+    z-index: 1; /* Ensure watermark is behind the card content */
+    font-weight: bold; /* Make watermark text bold */
+    text-align: center; /* Center the watermark text */
+    user-select: none; /* Prevent text selection */
+}

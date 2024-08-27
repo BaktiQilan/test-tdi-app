@@ -1,0 +1,50 @@
+.custom-img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card {
+  height: 100%;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+.custom-img {
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* To ensure image fit nicely */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Add some background color for better visibility */
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Adjust button size */
+}
+
+.carousel-inner {
+  position: relative; /* Position images correctly inside the slider */
+}
+
+/* Styles for carousel images */
+.carousel-inner img {
+  width: 100%; /* Make the image cover the width of the container */
+  height: 300px; /* Fixed height */
+  object-fit: cover; /* Cover the container without stretching */
+}
+
+/* Optional: Adjust size of carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Adjust size if needed */
+}

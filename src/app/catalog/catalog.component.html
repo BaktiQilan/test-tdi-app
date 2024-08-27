@@ -1,0 +1,96 @@
+<div class="container mt-2">
+  <div class="col-12 mb-3">
+    <div class="input-group position-relative">
+      <input
+        type="text"
+        class="form-control ps-5 rounded-pill"
+        placeholder="Search..."
+        [(ngModel)]="search"
+      />
+      <span class="position-absolute top-50 start-0 translate-middle-y ms-3">
+        <i class="fa fa-search"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col-4" *ngFor="let item of filter()">
+        <div class="card">
+          <!-- Slider container -->
+          <div id="carouselExample{{ item.id }}" class="carousel slide">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div
+                class="carousel-item"
+                *ngFor="let image of item.images; let i = index"
+                [class.active]="i === 0"
+              >
+                <img
+                  [src]="image"
+                  class="d-block w-100 custom-img"
+                  [alt]="item.title"
+                />
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              *ngIf="item.images.length > 1"
+              (click)="prevSlide(item.id)"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              *ngIf="item.images.length > 1"
+              (click)="nextSlide(item.id)"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title text-truncate">{{ item.title }}</h5>
+            <p class="card-text">
+              <strong>${{ item.price }}</strong>
+            </p>
+            <p class="card-text">
+              <span class="text-warning">
+                <i class="fa fa-star"></i>
+              </span>
+              {{ item.rating }}
+            </p>
+          </div>
+
+          <div class="d-grid mx-2 mb-2 p-2">
+            <button
+              class="btn btn-primary"
+              role="button"
+              (click)="addCart(item)"
+            >
+              Add to Cart
+            </button>
+            <button
+              class="btn btn-secondary mt-2"
+              (click)="viewDetails(item.id)"
+            >
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

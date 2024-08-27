@@ -1,0 +1,63 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand" routerLink="/">TDI Test E-Commerce</a>
+      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center ms-3">
+          <a
+            class="nav-link"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa fa-solid fa-cart-shopping"></i>
+            <div class="badge bg-danger" style="font-size: 10px">
+              {{ totalItems }}
+            </div>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <ul class="dropdown-menu dropdown-menu-end cart-dropdown">
+                  <li class="dropdown-header">Cart ({{ cart.length }})</li>
+                  <li>
+                    <div class="cart-items-container">
+                      <div
+                        class="cart-item"
+                        *ngFor="let item of cart; let i = index"
+                      >
+                        <div class="cart-item-left">
+                          <img
+                            [src]="item.thumbnail"
+                            [alt]="item.title"
+                            class="cart-item-thumbnail"
+                          />
+                          <div class="cart-item-info">
+                            <div class="cart-item-title">{{ item.title }}</div>
+                          </div>
+                        </div>
+                        <div class="cart-item-right">
+                          <div class="cart-item-details">
+                            {{ item.quantity }} x ${{ item.price }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex mt-2 mx-2">
+                      <button class="btn btn-primary" routerLink="/checkout">
+                        Checkout
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<router-outlet></router-outlet>
