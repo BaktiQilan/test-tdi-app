@@ -1,0 +1,29 @@
+Soal:
+1. Apa yang anda ketahui tentang Rest API?
+2. Apa yang anda ketahui tentang Server side and Client side processing?
+3. Apa yang anda ketahui tentang Design pattern Dependency Injection?
+4. Apa yang anda ketahui tentang Typescript dan Angular framework?
+5. Apa yang anda ketahui tentang Microfrontend?
+
+Jawab:
+1. RestAPI adalah suatu cara untuk melakukan komunikasi antar aplikasi melalui jaringan dengan menggunakan HTTP request. dengan maksud atau tujuan untuk memudahkan integrasi dari berbagai aplikasi ataupun layanan.
+
+2. - Server Side Processing: Pengolahan atau proses yang dilakukan di server, seperti business logic, otentifikasi user, dan interaksi dengan database.
+   - Clinet Side Processing: Pengolahan atau proses yang dilakukan di client (browser), seperti Validasi pada sebuah form, dengan tujuan kenyamanan user agar lebih responsif.
+
+3. Design Pattern Dependency Injection adalah sebuah pola desain yang digunakan untuk mengelola ketergantungan (dependency) antar objek. Tujuannya untuk mengurangi keterkaitan antar komponen dengan maksud mengingkatkan aplikasi dalam kefleksibelan dan dalam proses testnya.
+
+4. - Typescript adalah bahasa pemrogramman superset(mencakup semua fitur) dari JavaScript.
+   - Angular Framework adalah sebuah kerangka kerja yang bersifat open-source yang dikembangkan oleh google dengan menggunakan bahasa pemrogramman utama Typescript.
+
+5. Microfrontend adalah pendekatan arsitektur untuk membangun Frontend dengan membagi user interface (UI) menjadi bagian-bagian yang lebih kecil sehingga dapat dikelola secara independen.
+
+
+
+========================== Penjelasan Component ====================================================
+pada project yang saya buat terdiri dari 5 Component.
+1. Component Cart => berfungsi sebagai penyimpanan untuk selanjutnya dikirim ke component checkout.
+2. Component Catalog => berfungsi untuk menampilkan semua item yang tersedia, terdapat dua tombol pada component ini, yang pertama add to cart yang berfungsi menambahkan item ke dalam component cart dan yang kedua view detail yang berfungsi meneruskan ke component item0-detail.
+3. Component Checkout => berfungsi untuk menampilkan item-item yang sebelumnya sudah dimasukan kedalam component cart, terdapat tombol hapus untuk menghapus item dari cart dan juga tombol Buy untuk melakukan transaction pada component transaction.
+4. Component item-detail => berfungsi untuk menampilkan detail dari item yang dipilih. terdapat juga tombol add to cart untuk menambahkan item kedalam cart.
+5. Component Transaction => berfungsi untuk melakukan pembayaran(dummy) sehingga menjadikan item yang sudah di checkout tadi menjadi tidak bisa dihapus lagi dan diberi watermark PAID.
